@@ -1,3 +1,4 @@
+// Solution 1: Time - O(n), Space - O(n)
 const isValid = (s: string) => {
   const stack: string[] = [];
   for (let c of s) {
@@ -16,4 +17,11 @@ const isValid = (s: string) => {
   }
 
   return !stack.length;
+};
+
+// Solution 2: Time - O(n^2), Space - O(n^2)
+const isValid = (s: string) => {
+  const str2 = s.replace("()", "").replace("{}", "").replace("[]", "");
+
+  return s != str2 ? isValid(str2) : !s;
 };
