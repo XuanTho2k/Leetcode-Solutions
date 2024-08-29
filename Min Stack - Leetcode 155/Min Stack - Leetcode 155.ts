@@ -1,3 +1,4 @@
+// Solution 1: T - O(1), S - O(n)
 class MinStack {
   private stack: number[];
   private minStk: number[];
