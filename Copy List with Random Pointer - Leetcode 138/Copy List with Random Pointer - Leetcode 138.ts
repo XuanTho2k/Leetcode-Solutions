@@ -3,7 +3,7 @@ class _Node {
   next: _Node | null;
   random: _Node | null;
 
-  constructor(val?: number, next?: _Node, random?: _Node) {
+  constructor(val?: number, next?: _Node | null, random?: _Node) {
     this.val = val === undefined ? 0 : val;
     this.next = next === undefined ? null : next;
     this.random = random === undefined ? null : random;
@@ -32,3 +32,36 @@ const copyRandomList = (head: _Node | null): _Node | null => {
 };
 
 // Solution 2: T - O(n), S - O(1)
+
+const copyRandomListOptimize = (head: _Node | null): _Node | null => {
+  if (!head) return null;
+
+  let curr: _Node | null = head;
+  while (curr) {
+    const new_node = new _Node(curr.val, curr.next);
+    curr.next = new_node;
+    curr = new_node.next;
+  }
+
+  curr = head;
+  while (curr) {
+    if (curr.next) {
+      curr.next.random = curr.random ? curr.random.next : null;
+    }
+    curr = curr.next ? curr.next.next : null;
+  }
+
+  const old_head: _Node | null = head;
+  const new_head: _Node | null = head.next;
+  let curr_old: _Node | null = old_head;
+  let curr_new: _Node | null = new_head;
+
+  while (curr_old && curr_new) {
+    curr_old.next = curr_old.next ? curr_old.next.next : null;
+    curr_new.next = curr_new.next ? curr_new.next.next : null;
+    curr_old = curr_old.next;
+    curr_new = curr_new.next;
+  }
+
+  return new_head;
+};
