@@ -1,4 +1,4 @@
-// Solution 1: T - O(n), S - O(1)
+// Solution 1: T - O(log n), S - O(1)
 const isPerfectSquare = (num: number): boolean => {
   if (num === 0) return false;
 
