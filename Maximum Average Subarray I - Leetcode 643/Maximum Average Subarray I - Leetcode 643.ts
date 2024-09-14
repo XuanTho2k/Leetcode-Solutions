@@ -4,19 +4,17 @@ const findMaxAverage = (nums: number[], k: number): number => {
   let cur_sum = 0;
 
   for (let i = 0; i < k; i++) {
-   cur_sum+=nums[i] 
+    cur_sum += nums[i];
   }
 
-  let max_avg = cur_sum/k
+  let max_avg = cur_sum / k;
 
-  for (let i = ; i < n; i++) {
-    cur_sum += nums[i]
-    cur_sum -= nums[i-k]
+  for (let i = k; i < n; i++) {
+    cur_sum += nums[i];
+    cur_sum -= nums[i - k];
 
-    max_avg = Math.max(max_avg, cur_sum/k)
-    
+    max_avg = Math.max(max_avg, cur_sum / k);
   }
 
-  return max_avg
-
+  return max_avg;
 };
