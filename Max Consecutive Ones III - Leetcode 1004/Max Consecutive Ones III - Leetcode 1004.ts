@@ -1,3 +1,4 @@
+// Solution 1: T - O(n), S - O(1)
 function longestOne(nums: number[], k: number): number {
   const n = nums.length;
   let [w_max, w_start, nums_zero] = [0, 0, 0];
