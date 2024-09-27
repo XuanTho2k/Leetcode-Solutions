@@ -1,3 +1,4 @@
+// @ts-ignore
 class Solution {
   checkArrayEqual(s1: string[], s2: string[]): boolean {
     return s1.every((val, idx) => val === s2[idx]);
