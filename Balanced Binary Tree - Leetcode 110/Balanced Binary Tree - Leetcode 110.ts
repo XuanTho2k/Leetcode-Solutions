@@ -1,4 +1,4 @@
-import { TreeNode } from "../Datastructure/TreeNode";
+import { TreeNode } from "../DataStructure/TreeNode";
 class Solution {
   isBalanced(root: TreeNode | null): boolean {
     let ans = [true];

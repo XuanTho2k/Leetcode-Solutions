@@ -1,4 +1,4 @@
-import { TreeNode } from "../Datastructure/TreeNode";
+import { TreeNode } from "../DataStructure/TreeNode";
 
 // @ts-ignore
 class Solution {
