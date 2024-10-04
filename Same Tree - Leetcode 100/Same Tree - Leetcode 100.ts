@@ -7,7 +7,7 @@ class Solution {
 
   balanced(n: TreeNode | null, m: TreeNode | null): boolean {
     if (n === null && m === null) return true;
-    if ((n === null && m !== null) || (n !== null && m === null)) return true;
+    if ((n === null && m !== null) || (n !== null && m === null)) return false;
     if (n?.val !== m?.val) return false;
 
     return (
