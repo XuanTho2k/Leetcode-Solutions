@@ -1,6 +1,7 @@
 import { TreeNode } from "../DataStructure/TreeNode";
 
 class Solution {
+  // Solution 1: T - O(n), S - O(n)
   levelOrder(root: TreeNode | null): number[][] {
     const ans: number[][] = [];
     const queue = [root];
